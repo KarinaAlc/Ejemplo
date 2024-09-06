@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Sesión 1</title>
+
+<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #ffffff;
+    color: #a0a0a0;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+div.sourceCode
+  { color: #1f1c1b; background-color: #ffffff; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #1f1c1b; } /* Normal */
+code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+code span.an { color: #ca60ca; } /* Annotation */
+code span.at { color: #0057ae; } /* Attribute */
+code span.bn { color: #b08000; } /* BaseN */
+code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #924c9d; } /* Char */
+code span.cn { color: #aa5500; } /* Constant */
+code span.co { color: #898887; } /* Comment */
+code span.cv { color: #0095ff; } /* CommentVar */
+code span.do { color: #607880; } /* Documentation */
+code span.dt { color: #0057ae; } /* DataType */
+code span.dv { color: #b08000; } /* DecVal */
+code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code span.fl { color: #b08000; } /* Float */
+code span.fu { color: #644a9b; } /* Function */
+code span.im { color: #ff5500; } /* Import */
+code span.in { color: #b08000; } /* Information */
+code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code span.op { color: #1f1c1b; } /* Operator */
+code span.ot { color: #006e28; } /* Other */
+code span.pp { color: #006e28; } /* Preprocessor */
+code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+code span.sc { color: #3daee9; } /* SpecialChar */
+code span.ss { color: #ff5500; } /* SpecialString */
+code span.st { color: #bf0303; } /* String */
+code span.va { color: #0057ae; } /* Variable */
+code span.vs { color: #bf0303; } /* VerbatimString */
+code span.wa { color: #bf0303; } /* Warning */
+
+.sourceCode .row {
+  width: 100%;
+}
+.sourceCode {
+  overflow-x: auto;
+}
+.code-folding-btn {
+  margin-right: -30px;
+}
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Prácticas de Estadística 2</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">Sobre el curso</a>
+</li>
+<li>
+  <a href="pd1.html">Sesión 1</a>
+</li>
+<li>
+  <a href="pd2.html">Sesión 2</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Sesión 1</h1>
+
+</div>
+
+
+<p><img src="logoPUCP.png" width="30%" /></p>
+<div id="facultad-de-ciencias-sociales---pucp" class="section level2">
+<h2>FACULTAD DE CIENCIAS SOCIALES - PUCP <br></h2>
+<div
+id="curso-pol-304---estadística-para-el-análisis-político-2-semestre-2024---2"
+class="section level3">
+<h3>Curso: POL 304 - Estadística para el análisis político 2 | Semestre
+2024 - 2 <br></h3>
+</div>
+<div id="jefas-de-práctica-karina-alcántara-y-lizette-crispín"
+class="section level3">
+<h3>Jefas de Práctica: Karina Alcántara 👩‍🏫 y Lizette Crispín 👩‍🏫<br></h3>
+</div>
+<div id="mundo-tidyverse" class="section level3">
+<h3><strong>Mundo Tidyverse</strong></h3>
+<p><img src="pd1_tidy.png" width="30%" style="display: block; margin: auto;" /></p>
+<p>Tidyverse es un conjunto de de paquetes de R para ciencia de datos,
+nos ayuda a trabajar las bases de datos. Ha sido desarrollado por
+RStudio.</p>
+<ul>
+<li><p><strong>Es consistente</strong> : Todos los paquetes tienen una
+misma estructura</p></li>
+<li><p><strong>Concatenable</strong>: Siempre se pueden unir pequeñas
+partes para resolverlos</p></li>
+<li><p><strong>Funcional</strong>: Como casi todo R, promueve la
+programación</p></li>
+</ul>
+<p>Para cada paso de tratamiento de datos existe un paquete, se puede
+pasar desde cargar/importar los datos, limpiarlos, transformarlos,
+visualizar, modelarlos y finalmente comunicarlos.</p>
+<p>Para importar datos tenemos readr, haven y readxl. Para limpiar los
+datos usamos tidyr, para transformar los datos se usa dyplr, que lo
+veremos a continuación, para modelar se usa purr o broom, para
+visualizar se usa ggplot2. Finalmente, para comunicar se usa knitr para
+publicar los resultados por html, pdf, ppt. y rmarkdown es la estructura
+de knitr.</p>
+<p>Algunos les gusta usarlo porque facilita el análisis y manipulación
+de datos y es más rápido, pero, por otro lado, tiene otra lógica en la
+programación. En vez de usar “,” para diferenciar entre comandos, usar
+%&gt;%.</p>
+<p>Instalando el paquete de tidyverse te incluye los 8 paquetes. Pero,
+eso sí, toma más tiempo de lo debido. Por eso, en esta ocasión, se ha
+descargado los que necesitaremos ahora</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Paquetes que se usarán </span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(dplyr) </span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(rio)</span></code></pre></div>
+<div id="sobre-la-data-a-analizar" class="section level4">
+<h4>Sobre la data a analizar</h4>
+<p><img src="pd1-diccionario.jpeg" width="30%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="importar-y-preparar-base-de-datos" class="section level4">
+<h4>Importar y preparar base de datos</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">&quot;Data_pd1.xlsx&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">str</span>(data)<span class="co">#Ver estructura de bases de datos, tipo de variable</span></span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    100 obs. of  13 variables:
+##  $ pais              : chr  &quot;Albania&quot; &quot;Algeria&quot; &quot;Argentina&quot; &quot;Armenia&quot; ...
+##  $ ParDig            : num  0.644 0.119 0.627 0.525 0.983 ...
+##  $ Servicios_Online  : num  0.5942 0.0652 0.7101 0.4275 0.9783 ...
+##  $ ProcesoElectoral  : num  7 2.58 9.17 5.25 10 9.58 0.5 0.83 7.42 0.92 ...
+##  $ Policulture       : num  5 5 6.88 1.88 8.75 6.88 3.75 4.38 4.38 5.63 ...
+##  $ SoporteSocial     : num  0.848 1.16 1.432 1.055 1.548 ...
+##  $ LibertadElegir    : num  0.383 0.086 0.471 0.283 0.557 0.532 0.351 0.536 0.527 0.235 ...
+##  $ Generosidad       : num  0.178 0.073 0.066 0.095 0.332 0.244 0.035 0.255 0.166 0.094 ...
+##  $ Percep_corrup     : num  0.027 0.114 0.05 0.064 0.29 0.226 0.182 0.11 0.143 0.142 ...
+##  $ GastoBolsillo_porc: num  58 30.9 15.8 80.6 18.9 18.9 78.9 28 71.9 35.8 ...
+##  $ Psi_1000          : num  1.2 1.8 4 2.9 3.6 5.1 3.4 0.9 0.5 4.1 ...
+##  $ Enfermeras_1000   : num  3.6 2.2 2.6 5.6 12.7 8.2 7 2.5 0.3 11.4 ...
+##  $ Cirujanos_1000    : num  11.6 12.1 50.1 86.7 45.1 ...</code></pre>
+</div>
+</div>
+</div>
+<div id="paquete-dplyr" class="section level2">
+<h2><strong>Paquete “dplyr”</strong></h2>
+<p>El paquete dplyr es el más útil en R para la manipulación de datos,
+una de las ventajas es que se pueda usar el pipe para combinar
+diferentes funciones en R. Para no tener que escribirlo, se genera
+mediante Ctlr + shift + M. En pocas palabras, reemplaza la “,” para
+concatenar(unir) varios comandos.</p>
+<div id="filter-filtrar-filas-según-un-criterio" class="section level3">
+<h3><strong>Filter</strong>: filtrar filas según un criterio</h3>
+<p>Filtra casos o filas que cumplen con el criterio.</p>
+<p>Por ejemplo, acá estamos filtrando de la data a los países en los que
+más del 50% de personas realizan un gasto de bolsillo</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  <span class="fu">filter</span>(GastoBolsillo_porc <span class="sc">&gt;</span> <span class="dv">50</span>)</span></code></pre></div>
+</div>
+<div id="arrange-ordenar-las-filas" class="section level3">
+<h3><strong>Arrange</strong>: ordenar las filas</h3>
+<p>Ordenar las filas según una o más variables. Por default, si no se
+indica un criterio de orden, se ordenará de forma
+<strong>ascendente</strong>.</p>
+<p>En este caso, además de realizar un filtro, se ha ordenado a la
+variable “GastoBolsillo_porc” de mayor a menor</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="fu">filter</span>(GastoBolsillo_porc <span class="sc">&gt;</span> <span class="dv">50</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(GastoBolsillo_porc))</span></code></pre></div>
+</div>
+<div id="select-seleccionando-subconjunto-de-variables"
+class="section level3">
+<h3><strong>Select</strong>: Seleccionando subconjunto de variables</h3>
+<p>Selecciona columnas o mejor dicho, variables de su conjunto de datos,
+según nombre. También se puede cambiar el nombre de la variable
+indicando los nombres en el siguiente orden “Nuevo_nombre =
+nombreendata”.</p>
+<p>En este comando estamos especificando que queremos seleccionar de la
+data, las variables interés: país y GastoBolsillo_porc; además del
+filtro y orden que habíamos indicado previamente.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  <span class="fu">filter</span>(GastoBolsillo_porc <span class="sc">&gt;</span> <span class="dv">50</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(GastoBolsillo_porc))<span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  <span class="fu">select</span>(pais,GastoBolsillo_porc)</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#Si quisiera cambiar el nombre de pais por Nombre_pais, debería usar select(Nombre_pais = pais, GastoBolsillo_porc)</span></span></code></pre></div>
+<p>Si queremos quitar variable ponemos el signo de menos. Salen todas
+las variables menos Gasto de bolsillo y generosidad</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>GastoBolsillo_porc,<span class="sc">-</span>Generosidad)</span></code></pre></div>
+</div>
+<div id="mutate-para-modificar-la-base-de-datos" class="section level3">
+<h3><strong>Mutate</strong>: Para modificar la base de datos</h3>
+<p>Crea nuevas columnas conservando las variables existentes. En esta
+ocasión estamos creando una nueva variable “AltaPerCorru” que toma como
+punto de corte su tercer cuartil. Si el valor es mayor al 3er cuartil,
+la nueva variable será 1, sino será 0.</p>
+<p>Primero determinemos el valor del punto de corte</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>Percep_corrup)</span></code></pre></div>
+<p>Ahora, dentro del comando mutate, estamos usando la función
+<strong>ifelse</strong>. Esta función necesita de 4 argumentos: la
+variable en la que se basa, la condición, el valor si se cumple la
+condición, y el valor cuando no se cumple la condición</p>
+<p>En este caso:</p>
+<ul>
+<li><p>Variable = Percep_corrup</p></li>
+<li><p>Condición = superar (&gt;) 0.1422</p></li>
+<li><p>Valor cuando se cumple la condición = 1</p></li>
+<li><p>Valor cuando no se cumple la condición = 0</p></li>
+</ul>
+<p>Reemplacemos:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">MayorPerCorru =</span> <span class="fu">ifelse</span>(Percep_corrup <span class="sc">&gt;</span> <span class="fl">0.1422</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span></code></pre></div>
+<p>Para que la nueva variable se guarde en la data, debemos guardar en
+un objeto (en este caso es la misma data)</p>
+</div>
+<div id="count-contar-casos-en-base-a-una-variable"
+class="section level3">
+<h3><strong>Count</strong>: contar casos en base a una variable</h3>
+<p>Nos ayuda a contar las observaciones.</p>
+<p>Vamos a contar los casos de los países según la percepción de
+corrupción (MayorPerCorru).</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">count</span>(MayorPerCorru)</span></code></pre></div>
+<pre><code>##   MayorPerCorru  n
+## 1             0 75
+## 2             1 25</code></pre>
+<p>Como lo creamos a partir del tercer cuartil, se presupone que la
+relación entre los que no tienen una alta corrupción y los que sí es de
+3 a 1.</p>
+</div>
+<div id="summarise-crear-resúmenes-de-datos" class="section level3">
+<h3><strong>Summarise</strong>: Crear resúmenes de datos</h3>
+<p>Resume cualquier de las variables de la data, según su tipo. Se le
+debe indicar una variable a analizar y el tipo de análisis que se le
+aplicará.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Media =</span> <span class="fu">mean</span>(ProcesoElectoral,<span class="at">na.rm =</span> T))</span></code></pre></div>
+<pre><code>##    Media
+## 1 6.7825</code></pre>
+<p>En este caso, queremos sacar el promedio de la puntuación de Proceso
+Electoral. Para eso usamos summarise. Mencionamos los datos de la base,
+luego la variable que se creará en base a ella, este nombre será el
+encabezado del valor que se genere en la tabla resumen. Luego, indicamos
+el cálculo que se quiere realizar, y la variable sobre la cual se
+realizará el mencionado cálculo. Si queremos que se omitan los valores
+perdidos (de haberlos) debemos indicar dentro del comando de la media
+“na.rm =T”.</p>
+<p><strong>Solo con variables numéricas (ojo)</strong></p>
+</div>
+<div id="group_by-agrupar-datos" class="section level3">
+<h3><strong>Group_by</strong>: Agrupar datos</h3>
+<p>Agrupa diferentes observaciones de manera que el conjunto de datos
+original no cambie.</p>
+<p>Podemos comparar cómo se califica a los procesos electorales según la
+percepción de corrupción en un país.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">group_by</span>(MayorPerCorru)<span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Media =</span> <span class="fu">mean</span>(ProcesoElectoral))</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 2
+##   MayorPerCorru Media
+##           &lt;dbl&gt; &lt;dbl&gt;
+## 1             0  6.55
+## 2             1  7.48</code></pre>
+<div id="ejercicio-en-clase" class="section level4">
+<h4>Ejercicio en clase</h4>
+<ol style="list-style-type: decimal">
+<li>Crea una nueva variable (“Generosos”), que indique “Más generosos”
+si supera el 0.25 y “Menos generosos” si es menor o igual a 0.25.
+Agrupando según “Generosos”, identifica la media de cultura política
+(Policulture).</li>
+</ol>
+<pre><code>## # A tibble: 2 × 2
+##   Generosos       media
+##   &lt;chr&gt;           &lt;dbl&gt;
+## 1 Menos generosos  5.56
+## 2 Más generosos    7.38</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Filtra a aquellos países que tengan el valor de la libertad de
+elegir superior al valor de la media. Luego, y cuenta los casos de los
+países según si son más o menos generosos.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="repaso" class="section level2">
+<h2><strong>Repaso</strong></h2>
+<p>Recordemos que con los modelos buscamos medir el efecto de un
+conjunto de variables independientes sobre una dependiente y también con
+el modelo creado predecir.</p>
+<p>En este modelo es indispensable contar con una variable dependiente
+numérica continua.</p>
+<p>Como se mencionó en la clase anterior, para obtener el mejor modelo
+con la recta que capte la mayoría de las coordenadas, se realizaba el
+método de los mínimos cuadrados (el cual ya es calculado por R).</p>
+<p>Como no todo es perfecto, para poder realizar este método, se tienen
+que cumplir 5 supuestos, y así asegurar que el modelo que creemos sea
+estable y pueda predecir correctamente.</p>
+</div>
+<div
+id="regresión-lineal-prediciendo-el-nivel-de-cultura-política-en-un-país"
+class="section level2">
+<h2>Regresión Lineal: Prediciendo el nivel de cultura política en un
+país</h2>
+<div id="recordando-rlsimple" class="section level3">
+<h3>Recordando: RLSimple</h3>
+<p>Calcularemos un modelo para predecir el nivel de cultura política en
+un país según la tasa de cirujanos por mil habitantes</p>
+<p>Variable dependiente: indicador de cultura política</p>
+<p>Variable independiente: Cirujanos por cada mil personas</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>modelo <span class="ot">&lt;-</span><span class="fu">lm</span>(data<span class="sc">$</span>Policulture <span class="sc">~</span> data<span class="sc">$</span>Cirujanos_1000)</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code></pre></div>
+<p>Seguimos nuestro flujograma para evaluar el modelo:</p>
+<ol style="list-style-type: decimal">
+<li>Nos preguntamos si el modelo es válido</li>
+<li>Qué tanto explica el modelo</li>
+<li>Si la variable independiente aporta al modelo</li>
+<li>Identificamos los coeficientes</li>
+</ol>
+</div>
+<div id="recordando-rlmúltiple" class="section level3">
+<h3>Recordando: RLMúltiple</h3>
+<p>¿Qué sucede si ahora agregamos más variables? 😼</p>
+<p>Calculamos nuestro modelo, en este caso usaremos lo siguiente:</p>
+<ul>
+<li><p>Variable dependiente: indicador de cultura política</p></li>
+<li><p>Variables independientes: Cirujanos por cada mil personas
+(Cirujanos_1000) + Participación digital (ParDig) + Percepción de
+Corrupción Alta (MayorPerCorru)</p></li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>modelo1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(data<span class="sc">$</span>Policulture<span class="sc">~</span> data<span class="sc">$</span>Cirujanos_1000<span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>                data<span class="sc">$</span>ParDig<span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>                data<span class="sc">$</span>MayorPerCorru)</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="fu">summary</span>(modelo1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = data$Policulture ~ data$Cirujanos_1000 + data$ParDig + 
+##     data$MayorPerCorru)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.0899 -1.0188 -0.0692  1.0157  3.6525 
+## 
+## Coefficients:
+##                     Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)         4.262470   0.382055  11.157  &lt; 2e-16 ***
+## data$Cirujanos_1000 0.008425   0.004543   1.855  0.06673 .  
+## data$ParDig         1.859428   0.764792   2.431  0.01690 *  
+## data$MayorPerCorru  1.070411   0.362878   2.950  0.00399 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.452 on 96 degrees of freedom
+## Multiple R-squared:  0.3115, Adjusted R-squared:   0.29 
+## F-statistic: 14.48 on 3 and 96 DF,  p-value: 7.435e-08</code></pre>
+<p>Seguimos nuestro flujograma para evaluar el modelo:</p>
+<ol style="list-style-type: decimal">
+<li>Nos preguntamos si el modelo es válido</li>
+<li>Qué tanto explica el modelo (R2 ajustado)</li>
+<li>Si las variables independientes aportan al modelo</li>
+<li>Identificamos los coeficientes</li>
+</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>modelo1<span class="sc">$</span>coefficients</span></code></pre></div>
+<pre><code>##         (Intercept) data$Cirujanos_1000         data$ParDig  data$MayorPerCorru 
+##         4.262469874         0.008424746         1.859427768         1.070411091</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Construimos la ecuación 🤺</li>
+</ol>
+<hr />
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

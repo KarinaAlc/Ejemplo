@@ -1,0 +1,12 @@
+name: "Prácticas de Estadística 2"
+output_dir: "."
+navbar:
+  title: "Prácticas de Estadística 2"
+  right:
+    - text: "Sobre el curso"
+      href: index.html
+    - text: "Sesión 1"
+      href: pd1.html
+    - text: "Sesión 2"
+      href: pd2.html
+   
